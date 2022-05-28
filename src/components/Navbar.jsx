@@ -6,7 +6,6 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { userProfileData, chatData } from "../data/dummy";
 import avatar from "../data/avatar.jpg";
-import { Chat, Notification, UserProfile } from ".";
 import { useStateContext } from "../contexts/ContextProvider";
 import UserProfileDropdown from "./UserProfileDropdown";
 import NotificationDropdown from "./NotificationDropdown";
@@ -30,7 +29,6 @@ const NavButton = ({ clickHandler, title, icon, color, dotColor }) => {
 };
 const Navbar = () => {
   const {
-    activeMenu,
     setActiveMenu,
     isClicked,
     setIsClicked,
@@ -48,7 +46,7 @@ const Navbar = () => {
     window.addEventListener("resize", handleResize);
     handleResize();
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [setScreenSize]);
 
   useEffect(() => {
     if (screenSize < 900) {
@@ -56,7 +54,7 @@ const Navbar = () => {
     } else {
       setActiveMenu(true);
     }
-  }, [screenSize]);
+  }, [screenSize, setActiveMenu]);
   return (
     <nav className="flex justify-between p-2 md:mx-6 relative">
       <NavButton
@@ -116,7 +114,6 @@ const Navbar = () => {
           />
         )}
         {/* {screenSize} */}
-        {isClicked.chat && "Chat"}
       </div>
     </nav>
   );

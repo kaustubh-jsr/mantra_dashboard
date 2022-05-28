@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { BiRupee } from "react-icons/bi";
+import React from "react";
+// import { BiRupee } from "react-icons/bi";
 import { GoPrimitiveDot } from "react-icons/go";
-import { Stacked, Pie, Button, SparkLine } from "../components";
+import { Stacked, Button, SparkLine } from "../components";
 import { earningData, SparklineAreaData } from "../data/dummy";
 import { useStateContext } from "../contexts/ContextProvider";
 const Ecommerce = () => {

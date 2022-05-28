@@ -1,8 +1,6 @@
 import React from "react";
 import { MdOutlineCancel } from "react-icons/md";
-import { FiCreditCard } from "react-icons/fi";
 import { userProfileData } from "../data/dummy";
-import Button from "./Button";
 const UserProfileDropdown = ({ currentColor, setIsClicked, avatar }) => {
   return (
     <div
