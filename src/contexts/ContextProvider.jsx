@@ -35,6 +35,7 @@ export const ContextProvider = ({ children }) => {
       localStorage.getItem("color") ? localStorage.getItem("color") : "#03C9D7"
     );
     localStorage.setItem(
+      "themeMode",
       localStorage.getItem("themeMode")
         ? localStorage.getItem("themeMode")
         : "Light"
