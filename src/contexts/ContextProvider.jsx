@@ -34,12 +34,16 @@ export const ContextProvider = ({ children }) => {
     setColor(
       localStorage.getItem("color") ? localStorage.getItem("color") : "#03C9D7"
     );
+    localStorage.setItem(
+      localStorage.getItem("themeMode")
+        ? localStorage.getItem("themeMode")
+        : "Light"
+    );
     setCurrentMode(
       localStorage.getItem("themeMode")
         ? localStorage.getItem("themeMode")
         : "Light"
     );
-    localStorage.setItem("themeMode", "Light");
   }, []);
   return (
     <StateContext.Provider
